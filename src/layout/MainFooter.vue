@@ -9,7 +9,7 @@
         <div class="col-1"></div>
         <!-- MR. GREENIE -->
         <div class="col-2">
-          <ul class="list-unstyled mx-auto">
+          <ul class="list-unstyled ">
             <li><img src="@/assets/img/Logo_footer.svg" fluid alt="Fluid image"></li>
             <br />
             <li class="footerText"></li> <br>
@@ -19,7 +19,7 @@
         </div>
         <!-- information -->
         <div class="col-2">
-          <ul class="list-unstyled mx-auto">
+          <ul class="list-unstyled">
             <li class="footerTitle">Información</li>
             <br />
             <li><a href="#" class="footerText">¿Quiénes somos?</a></li>
@@ -46,7 +46,7 @@
         </div>
         <!-- social media -->
         <div class="col-2">
-          <ul class="list-unstyled mx-auto">
+          <ul class="list-unstyled">
             <li class="footerTitle">Redes sociales</li>
             <br />
             <li class="footerText"><img src="@/assets/img/Facebook.svg" fluid alt="Fluid image"></li>
@@ -58,7 +58,7 @@
         </div>
         <!-- App Mr.Greenie -->
         <div class="col-2">
-          <ul class="list-unstyled mx-auto">
+          <ul class="list-unstyled">
             <li class="footerTitle">App Mr. Greenie</li>
             <br />
             <li class="footerText"><img src="@/assets/img/App.png" fluid alt="Fluid image"></li>

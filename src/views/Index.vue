@@ -1,14 +1,55 @@
 <template>
   <div class="wrapper">
     <parallax class="page-header header-filter" :style="headerStyle">
-      <div class="md-layout">
+      <div class="mt-5 space-110" />
+      <div class="mt-5 space-110" />
+      <div class="space-50" />
+      <div class="row" style="width: 100%">
+        <div class="col-1" />
+        <div class="col-11">
+          <div class="row">
+            <h1 class="headerTitle">
+              TODO LISTO PARA <br />
+              NUTRIR BIEN TU CUERPO
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="width: 100%">
+        <div class="col-1" />
+        <div class="col-6">
+          <p class="headerText">
+            Encuentra opciones deliciosas cercanas sin importar tu tipo de
+            dieta.
+          </p>
+        </div>
+      </div>
+
+      <div class="row my-5  " style="margin: 0 10rem">
+        
+        <div class="col-3 bg-white">f</div>
+        <div class="col-3 bg-white">f</div>
+        <div class="col-4 bg-white">f</div>
+      </div>
+
+      <!-- <div class="md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
-            <!-- <img :src="leaf4" alt="leaf4" class="leaf4" v-show="leafShow" />
-            <img :src="leaf3" alt="leaf3" class="leaf3" v-show="leafShow" />
-            <img :src="leaf2" alt="leaf2" class="leaf2" v-show="leafShow" />
-            <img :src="leaf1" alt="leaf1" class="leaf1" v-show="leafShow" /> -->
-            <div class="brand">
+            <div class="row">
+              <div class="col-1"/>
+              <div class="col-6">
+                <h1>TODO LISTO PARA <br> NUTRIR BIEN TU CUERPO</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1"/>
+              <div class="col-6">
+                <p>Encuentra opciones deliciosas cercanas sin importar tu tipo de</p>
+              </div>
+            </div>
+
+            <div class="brand" style="text-align:left;">
               <h1>TODO LISTO PARA NUTRIR BIEN TU CUERPO</h1>
               <h3>Encuentra opciones deliciosas cercanas sin importar tu tipo de dieta.</h3>
             </div>
@@ -20,28 +61,28 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </parallax>
 
     <div class="row mt-4">
-      <div class=" col-3 ">s</div>
-      <div class=" col-3 ">ss</div>
-      <div class=" col-3 ">sss</div>
+      <div class="col-3">s</div>
+      <div class="col-3">ss</div>
+      <div class="col-3">sss</div>
     </div>
 
-    <div class="main ">
+    <div class="main">
       <div class="section section-basic">
         <div class="container">
           <div class="title">
-            <h2>Proveedores Greenies</h2><br>
+            <h2>Proveedores Greenies</h2>
+            <br />
             <label for=""> Conoce los proveedores más solicitados</label>
           </div>
           <basic-elements></basic-elements>
           <a href="#">ver más ></a>
         </div>
-        
       </div>
-      
+
       <div class="section section-tabs">
         <div class="container">
           <tabs></tabs>
@@ -74,7 +115,12 @@
         <div class="container text-center">
           <div class="md-layout">
             <div
-              class="md-layout-item md-size-66 md-xsmall-size-100 ml-auto mr-auto text-center"
+              class="
+                md-layout-item md-size-66 md-xsmall-size-100
+                ml-auto
+                mr-auto
+                text-center
+              "
             >
               <h2>Completed with examples</h2>
               <h4>
@@ -91,7 +137,15 @@
         <div class="container">
           <div class="md-layout">
             <div
-              class="md-layout-item md-size-33 md-medium-size-40 md-small-size-50 md-xsmall-size-70 mx-auto text-center"
+              class="
+                md-layout-item
+                md-size-33
+                md-medium-size-40
+                md-small-size-50
+                md-xsmall-size-70
+                mx-auto
+                text-center
+              "
             >
               <login-card header-color="green">
                 <h4 slot="title" class="card-title">Login</h4>
@@ -271,22 +325,21 @@
               ><i class="fab fa-github"></i> Star</md-button
             >
           </div>
-          
         </div>
-        
       </div>
     </div>
     <div class="section section-navbars">
-        <div class="container">
-          <div class="title center">
-            <h2 class="mainTitle">Cobertura  Mr Greenie</h2><br>
-            <label for="" class="subtitleText">¡Estamos en todo México!</label>
-          </div>
-          <!-- <small-navigation></small-navigation> -->
+      <div class="container">
+        <div class="title center">
+          <h2 class="mainTitle">Cobertura Mr Greenie</h2>
+          <br />
+          <label for="" class="subtitleText">¡Estamos en todo México!</label>
         </div>
-        <small-navigation class="mt-5"></small-navigation>
-        <navigation></navigation>
+        <!-- <small-navigation></small-navigation> -->
       </div>
+      <small-navigation class="mt-5"></small-navigation>
+      <navigation></navigation>
+    </div>
   </div>
 </template>
 
@@ -299,9 +352,8 @@ import Notifications from "./components/NotificationsSection";
 import TypographyImages from "./components/TypographyImagesSection";
 import JavascriptComponents from "./components/JavascriptComponentsSection";
 import { LoginCard } from "@/components";
-import Vue from 'vue'
+import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
-
 
 Vue.use(BootstrapVue);
 
@@ -314,50 +366,50 @@ export default {
     Notifications,
     TypographyImages,
     JavascriptComponents,
-    LoginCard
+    LoginCard,
   },
   name: "index",
   bodyClass: "index-page",
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/fondo_1.png")
+      default: require("@/assets/img/fondo_1.png"),
     },
     leaf4: {
       type: String,
-      default: require("@/assets/img/leaf4.png")
+      default: require("@/assets/img/leaf4.png"),
     },
     leaf3: {
       type: String,
-      default: require("@/assets/img/leaf3.png")
+      default: require("@/assets/img/leaf3.png"),
     },
     leaf2: {
       type: String,
-      default: require("@/assets/img/leaf2.png")
+      default: require("@/assets/img/leaf2.png"),
     },
     leaf1: {
       type: String,
-      default: require("@/assets/img/leaf1.png")
+      default: require("@/assets/img/leaf1.png"),
     },
     signup: {
       type: String,
-      default: require("@/assets/img/city.jpg")
+      default: require("@/assets/img/city.jpg"),
     },
     landing: {
       type: String,
-      default: require("@/assets/img/landing.jpg")
+      default: require("@/assets/img/landing.jpg"),
     },
     profile: {
       type: String,
-      default: require("@/assets/img/profile.jpg")
-    }
+      default: require("@/assets/img/profile.jpg"),
+    },
   },
   data() {
     return {
       firstname: null,
       email: null,
       password: null,
-      leafShow: false
+      leafShow: false,
     };
   },
   methods: {
@@ -367,19 +419,19 @@ export default {
       } else {
         this.leafShow = true;
       }
-    }
+    },
   },
   computed: {
     headerStyle() {
       return {
-        backgroundImage: `url(${this.image})`
+        backgroundImage: `url(${this.image})`,
       };
     },
     signupImage() {
       return {
-        backgroundImage: `url(${this.signup})`
+        backgroundImage: `url(${this.signup})`,
       };
-    }
+    },
   },
   mounted() {
     this.leafActive();
@@ -387,7 +439,7 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.leafActive);
-  }
+  },
 };
 </script>
 <style lang="scss">
