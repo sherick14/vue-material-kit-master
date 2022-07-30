@@ -12,19 +12,21 @@
               <h1>TODO LISTO PARA NUTRIR BIEN TU CUERPO</h1>
               <h3>Encuentra opciones deliciosas cercanas sin importar tu tipo de dieta.</h3>
             </div>
-            <div class="my-5">
-              <a href="#">ver más ></a>
-              <b-alert show class="my-5">Default Alert</b-alert>
+            <div class="row my-5 bg-white">
+              <div class="col-3">f</div>
+              <div class="col-3">f</div>
+              <div class="col-3">f</div>
+              
             </div>
           </div>
         </div>
       </div>
     </parallax>
 
-    <div class="form-row mt-4">
-      <div class="form-group col-md-3 ">s</div>
-      <div class="form-group col-md-3 ">s</div>
-      <div class="form-group col-md-3 ">s</div>
+    <div class="row mt-4">
+      <div class=" col-3 ">s</div>
+      <div class=" col-3 ">ss</div>
+      <div class=" col-3 ">sss</div>
     </div>
 
     <div class="main ">
@@ -37,17 +39,9 @@
           <basic-elements></basic-elements>
           <a href="#">ver más ></a>
         </div>
+        
       </div>
-      <div class="section section-navbars">
-        <div class="container">
-          <div class="title">
-            <h2>Cobertura  Mr Greenie</h2><br>
-            <label for="">¡Estamos en todo México!</label>
-          </div>
-          <small-navigation></small-navigation>
-        </div>
-        <navigation></navigation>
-      </div>
+      
       <div class="section section-tabs">
         <div class="container">
           <tabs></tabs>
@@ -277,15 +271,27 @@
               ><i class="fab fa-github"></i> Star</md-button
             >
           </div>
+          
         </div>
+        
       </div>
     </div>
+    <div class="section section-navbars">
+        <div class="container">
+          <div class="title center">
+            <h2 class="mainTitle">Cobertura  Mr Greenie</h2><br>
+            <label for="" class="subtitleText">¡Estamos en todo México!</label>
+          </div>
+          <!-- <small-navigation></small-navigation> -->
+        </div>
+        <small-navigation class="mt-5"></small-navigation>
+        <navigation></navigation>
+      </div>
   </div>
 </template>
 
 <script>
 import BasicElements from "./components/BasicElementsSection";
-import Navigation from "./components/NavigationSection";
 import SmallNavigation from "./components/SmallNavigationSection";
 import Tabs from "./components/TabsSection";
 import NavPills from "./components/NavPillsSection";
@@ -302,7 +308,6 @@ Vue.use(BootstrapVue);
 export default {
   components: {
     BasicElements,
-    Navigation,
     SmallNavigation,
     Tabs,
     NavPills,

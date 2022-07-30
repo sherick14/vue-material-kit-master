@@ -1,19 +1,11 @@
 <template>
   <div class="wrapper">
     <div id="menu">
-      <div class="md-layout">
-        <div class="md-layout-item md-size-50 md-small-size-100">
-          <div class="title">
-            <h3>Menu2</h3>
-          </div>
-          <img src="@/assets/img/Mapa.png" alt="">
-          
-          
+      <div class="">
+        <div class="center">
+          <img src="@/assets/img/Mapa.png" fluid alt="Fluid image" />
         </div>
-
-        
       </div>
-      
     </div>
     <!-- end menu -->
   </div>
@@ -21,21 +13,14 @@
 
 <script>
 export default {
-  
   data() {
     return {
-      responsive: false
+      responsive: false,
     };
   },
-  methods: {
-    
-  },
-  mounted() {
-    
-  },
-  beforeDestroy() {
-    
-  }
+  methods: {},
+  mounted() {},
+  beforeDestroy() {},
 };
 </script>
 
