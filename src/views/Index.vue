@@ -4,29 +4,46 @@
       <div class="md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
-            <img :src="leaf4" alt="leaf4" class="leaf4" v-show="leafShow" />
+            <!-- <img :src="leaf4" alt="leaf4" class="leaf4" v-show="leafShow" />
             <img :src="leaf3" alt="leaf3" class="leaf3" v-show="leafShow" />
             <img :src="leaf2" alt="leaf2" class="leaf2" v-show="leafShow" />
-            <img :src="leaf1" alt="leaf1" class="leaf1" v-show="leafShow" />
+            <img :src="leaf1" alt="leaf1" class="leaf1" v-show="leafShow" /> -->
             <div class="brand">
-              <h1>Vue Material Kit</h1>
-              <h3>A Badass Vue.js UI Kit made with Material Design.</h3>
+              <h1>TODO LISTO PARA NUTRIR BIEN TU CUERPO</h1>
+              <h3>Encuentra opciones deliciosas cercanas sin importar tu tipo de dieta.</h3>
+            </div>
+            <div class="my-5">
+              <a href="#">ver más ></a>
+              <b-alert show class="my-5">Default Alert</b-alert>
             </div>
           </div>
         </div>
       </div>
     </parallax>
-    <div class="main main-raised">
+
+    <div class="form-row mt-4">
+      <div class="form-group col-md-3 ">s</div>
+      <div class="form-group col-md-3 ">s</div>
+      <div class="form-group col-md-3 ">s</div>
+    </div>
+
+    <div class="main ">
       <div class="section section-basic">
         <div class="container">
           <div class="title">
-            <h2>Basic Elements</h2>
+            <h2>Proveedores Greenies</h2><br>
+            <label for=""> Conoce los proveedores más solicitados</label>
           </div>
           <basic-elements></basic-elements>
+          <a href="#">ver más ></a>
         </div>
       </div>
       <div class="section section-navbars">
         <div class="container">
+          <div class="title">
+            <h2>Cobertura  Mr Greenie</h2><br>
+            <label for="">¡Estamos en todo México!</label>
+          </div>
           <small-navigation></small-navigation>
         </div>
         <navigation></navigation>
@@ -276,6 +293,11 @@ import Notifications from "./components/NotificationsSection";
 import TypographyImages from "./components/TypographyImagesSection";
 import JavascriptComponents from "./components/JavascriptComponentsSection";
 import { LoginCard } from "@/components";
+import Vue from 'vue'
+import BootstrapVue from "bootstrap-vue";
+
+
+Vue.use(BootstrapVue);
 
 export default {
   components: {
@@ -294,7 +316,7 @@ export default {
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/vue-mk-header.jpg")
+      default: require("@/assets/img/fondo_1.png")
     },
     leaf4: {
       type: String,
