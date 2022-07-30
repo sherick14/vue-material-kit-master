@@ -25,12 +25,54 @@
           </p>
         </div>
       </div>
-
-      <div class="row my-5  " style="margin: 0 10rem">
-        
-        <div class="col-3 bg-white">f</div>
-        <div class="col-3 bg-white">f</div>
-        <div class="col-4 bg-white">f</div>
+      <div class="space-50" />
+      <div class="row my-5" style="margin: 0 10rem">
+        <div
+          class="col-3 py-3 px-4 bg-white"
+          style="border-radius: 15px 0px 0px 15px"
+        >
+          <div class="componentLabel">Tipo de comida</div>
+          <div>
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Ej. Desayuno"
+              class="componentInput"
+            />
+          </div>
+        </div>
+        <div class="col-3 py-3 px-4 bg-white">
+          <div class="componentLabel">Dieta</div>
+          <div>
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Ej. Vegana"
+              class="componentInput"
+            />
+          </div>
+        </div>
+        <div class="col-2 bg-white py-3" style="border-radius: 0px 0px 0px 0px">
+          <div class="componentLabel">Ubicación</div>
+          <div>
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Ej. Chihuahua"
+              class="componentInput"
+            />
+          </div>
+        </div>
+        <div class="col-2 bg-white py-3" style="border-radius: 0px 15px 15px 0px">
+          <div class="componentLabel"></div>
+          <div>
+            
+            <button class="mainButton ml-auto" style="">Buscar</button>
+          </div>
+        </div>
       </div>
 
       <!-- <div class="md-layout">
@@ -64,7 +106,7 @@
       </div> -->
     </parallax>
 
-    <div class="main">
+    <div class="main main-raised">
       <div class="section section-basic">
         <div class="container">
           <div class="title">
@@ -321,6 +363,29 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="section section-navbars">
+      <div class="container">
+        <div class="title center">
+          <h2 class="mainTitle">Lugares para todo tipo de dietas</h2>
+          <br />
+        </div>
+        <div class="row">
+          <div class="col-2">x </div>
+          <div class="col-2">
+            <div>
+              <label for="">1</label>
+            </div>
+          </div>
+          <div class="col-2">x </div>
+          <div class="col-2">x </div>
+          <div class="col-2">x </div>
+          <div class="col-2">x </div>
+        </div>
+        <!-- <small-navigation></small-navigation> -->
+      </div>
+      <small-navigation class="mt-5"></small-navigation>
+      <navigation></navigation>
     </div>
     <div class="section section-navbars">
       <div class="container">

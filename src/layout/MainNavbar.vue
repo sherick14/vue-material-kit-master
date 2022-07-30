@@ -16,7 +16,6 @@
           target="_blank"
           v-if="showDownload"
         >
-          <i class="material-icons">content_paste</i>
           <p>Inicio</p>
         </md-list-item>
 
@@ -25,7 +24,6 @@
           @click="scrollToElement()"
           v-if="showDownload"
         >
-          <i class="material-icons">cloud_download</i>
           <p>Provedores</p>
         </md-list-item>
         <md-list-item
@@ -33,7 +31,6 @@
           @click="scrollToElement()"
           v-if="showDownload"
         >
-          <i class="material-icons">cloud_download</i>
           <p>Servicios</p>
         </md-list-item>
       </div>

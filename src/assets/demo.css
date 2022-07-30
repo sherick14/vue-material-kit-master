@@ -3,6 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.mainButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 48px;
+    gap: 10px;
+    background: #F28300;
+    border-radius: 15px;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+}
+
 .tim-row {
     margin-bottom: 20px;
 }
@@ -322,4 +341,19 @@
     line-height: 21px;
     text-decoration-line: underline;
     color: #000000;
+}
+
+/* componente 2 */
+.componentLabel {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+
+.componentInput {
+    border: none;
 }
