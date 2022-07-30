@@ -314,9 +314,9 @@
     .dropdown-menu {
         display: none;
     }
-    .navbar-fixed-top {
-        -webkit-backface-visibility: hidden;
-    }
+    // .navbar-fixed-top {
+    //     -webkit-backface-visibility: hidden;
+    // }
     #bodyClick {
         height: 100%;
         width: 100%;
@@ -450,6 +450,7 @@
   .section .container,
   .footer .container {
       max-width: 1140px;
+      width: 100%;
   }
 }
 

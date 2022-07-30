@@ -64,12 +64,6 @@
       </div> -->
     </parallax>
 
-    <div class="row mt-4">
-      <div class="col-3">s</div>
-      <div class="col-3">ss</div>
-      <div class="col-3">sss</div>
-    </div>
-
     <div class="main">
       <div class="section section-basic">
         <div class="container">
