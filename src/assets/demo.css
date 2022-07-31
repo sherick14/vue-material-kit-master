@@ -92,14 +92,17 @@
     height: 50px;
     display: block;
 }
+
 .space-30 {
     height: 30px;
     display: block;
 }
+
 .space-20 {
     height: 20px;
     display: block;
 }
+
 .space-10 {
     height: 10px;
     display: block;
@@ -304,6 +307,13 @@
     font-weight: 400;
     font-size: 25px;
     line-height: 29px;
+    color: #000000;
+    text-decoration: none;
+
+    
+}.subtitleText a {
+    text-decoration: none;
+    color: #000000;
 }
 
 /* header */
@@ -413,6 +423,47 @@
     border: none;
 }
 
+
 /* .jumbotronImage {
     background-image: url("@/assets/img/Foto_2.png");
 } */
+
+/* cards */
+.cardTitle {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.cardSubtitle {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+
+.cardReviewText {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12.8px;
+    line-height: 15px;
+    /* display: flex; */
+    align-items: center;
+    color: #000000;
+}
+
+.cardShowMore {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
