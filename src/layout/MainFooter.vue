@@ -3,6 +3,7 @@
     class="footer"
     :class="{ [`footer-${type}`]: type }"
     :data-background-color="backgroundColor"
+    style="background: #F5F5F5;"
   >
     <div class="row my-5">
       <div class="row">
@@ -68,11 +69,6 @@
       </div>
     </div>
   </footer>
-  <!-- <footer
-    class="footer"
-    :class="{ [`footer-${type}`]: type }"
-    :data-background-color="backgroundColor"
-  > -->
 </template>
 <script>
 export default {

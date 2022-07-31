@@ -92,6 +92,18 @@
     height: 50px;
     display: block;
 }
+.space-30 {
+    height: 30px;
+    display: block;
+}
+.space-20 {
+    height: 20px;
+    display: block;
+}
+.space-10 {
+    height: 10px;
+    display: block;
+}
 
 .space-70 {
     height: 70px;
@@ -357,3 +369,50 @@
 .componentInput {
     border: none;
 }
+
+/* Jumbotron */
+.jumbotronTitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 39px;
+    line-height: 48px;
+    color: #FFFFFF;
+}
+
+.jumboText700 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.jumboText400 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.jumboButton {
+    background: rgba(255, 255, 255, 0.49);
+    border-radius: 15px;
+    padding: 14px 48px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    border: none;
+}
+
+/* .jumbotronImage {
+    background-image: url("@/assets/img/Foto_2.png");
+} */
