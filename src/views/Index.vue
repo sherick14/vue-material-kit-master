@@ -35,7 +35,6 @@
           <div>
             <input
               type="text"
-              name=""
               id=""
               placeholder="Ej. Desayuno"
               class="componentInput"
@@ -47,7 +46,6 @@
           <div>
             <input
               type="text"
-              name=""
               id=""
               placeholder="Ej. Vegana"
               class="componentInput"
@@ -59,7 +57,6 @@
           <div>
             <input
               type="text"
-              name=""
               id=""
               placeholder="Ej. Chihuahua"
               class="componentInput"
@@ -114,7 +111,9 @@
                     <label for="" class="cardReviewText">(3 reseñas)</label>
                   </div>
                   <div class="mt-2">
-                    <a href="#" class="cardShowMore" style="color: #000">Ver más ></a>
+                    <a href="#" class="cardShowMore" style="color: #000"
+                      >Ver más ></a
+                    >
                   </div>
                 </div>
               </div>
@@ -144,7 +143,9 @@
                     <label for="" class="cardReviewText">(10 reseñas)</label>
                   </div>
                   <div class="mt-2">
-                    <a href="#" class="cardShowMore" style="color: #000">Ver más ></a>
+                    <a href="#" class="cardShowMore" style="color: #000"
+                      >Ver más ></a
+                    >
                   </div>
                 </div>
               </div>
@@ -171,11 +172,13 @@
                     <img src="@/assets/img/Estrella.svg" />
                     <img src="@/assets/img/Estrella.svg" class="px-1" />
                     <img src="@/assets/img/Estrella.svg" />
-                    <img src="@/assets/img/Estrella.svg" class="px-1"/>
+                    <img src="@/assets/img/Estrella.svg" class="px-1" />
                     <label for="" class="cardReviewText">(10 reseñas)</label>
                   </div>
                   <div class="mt-2">
-                    <a href="#" class="cardShowMore" style="color: #000">Ver más ></a>
+                    <a href="#" class="cardShowMore" style="color: #000"
+                      >Ver más ></a
+                    >
                   </div>
                 </div>
               </div>
@@ -204,7 +207,9 @@
                     <label for="" class="cardReviewText">(12 reseñas)</label>
                   </div>
                   <div class="mt-2">
-                    <a href="#" class="cardShowMore" style="color: #000">Ver más ></a>
+                    <a href="#" class="cardShowMore" style="color: #000"
+                      >Ver más ></a
+                    >
                   </div>
                 </div>
               </div>
@@ -302,6 +307,7 @@
               <div class="space-30" />
               <h2 class="jumbotronTitle">Únete a la red de Mr. Greenie</h2>
               <div class="space-70" />
+              
               <div class="row">
                 <div class="col-6">
                   <p class="jumboText700">
@@ -337,13 +343,17 @@
           <h2 class="mainTitle">Cobertura Mr Greenie</h2>
           <br />
           <label for="" class="subtitleText">¡Estamos en todo México!</label>
+          
         </div>
         <!-- <small-navigation></small-navigation> -->
       </div>
       <small-navigation class="mt-5"></small-navigation>
       <navigation></navigation>
+      
     </div>
+    <button @click="greet">Greet</button>
   </div>
+  
 </template>
 
 <script>
@@ -352,6 +362,7 @@ import TypographyImages from "./components/TypographyImagesSection";
 import { LoginCard } from "@/components";
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
+import axios from "axios"
 
 Vue.use(BootstrapVue);
 
@@ -402,6 +413,11 @@ export default {
   },
   data() {
     return {
+      login2: {
+        email: "prueba@correo.com",
+        password: "Alex123#@",
+      },
+
       firstname: null,
       email: null,
       password: null,
@@ -409,14 +425,43 @@ export default {
     };
   },
   methods: {
-    leafActive() {
-      if (window.innerWidth < 768) {
-        this.leafShow = false;
-      } else {
-        this.leafShow = true;
-      }
-    },
+  greet(event) {
+    var perro = "holiwi"
+    alert(`diste clic`)
+    alert(this.login2.email)
+    console.log(this.login2)
+    console.log('ania')
+    axios.post("http://localhost:3000/login" , this.login2).then((res) => {
+      console.log(res);
+    }).catch((e)=> {
+      console.log('error')
+      console.log(e)
+    });
+    // `event` is the native DOM event
+  }
   },
+  // methods: {
+  //   leafActive() {
+  //     if (window.innerWidth < 768) {
+  //       this.leafShow = false;
+  //     } else {
+  //       this.leafShow = true;
+  //     }
+  //   }, 
+    
+  //   login(event) {
+  //     console.log("diste clic")
+  //     //console.log(this.login2)
+  //     // axios.post("http://localhost:3000/login)", this.login2).then((res) => {
+  //     //   console.log("entraste")
+  //     //   console.log(res)
+  //     // }).catch((e) => {
+  //     //   console.log("error")
+  //     //   console.log(e)
+  //     // })
+  //   }
+    
+  // },
   computed: {
     headerStyle() {
       return {
@@ -435,11 +480,10 @@ export default {
     },
   },
   mounted() {
-    this.leafActive();
-    window.addEventListener("resize", this.leafActive);
+    
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.leafActive);
+    
   },
 };
 </script>
