@@ -83,8 +83,7 @@
         <div class="container">
           <div class="title center">
             <h2 class="mainTitle">Proveedores Greenies</h2>
-            <br />
-            <label for="" class="subtitleText">
+            <label for="" class="subtitleText space-100">
               Conoce los proveedores más solicitados</label
             >
           </div>
