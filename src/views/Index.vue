@@ -2,7 +2,7 @@
   <div class="wrapper">
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="mt-5 space-110" />
-      <div class="bg-white row">
+      <div class="bg-white row" v-if="loginStatus == true">
         <div class="col-1"></div>
         <div class="col-6 my-3">
           <span class="px-2">
@@ -380,6 +380,7 @@ import { LoginCard } from "@/components";
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
 import axios from "axios";
+import CookieJar from "../cookieJar.js"
 
 Vue.use(BootstrapVue);
 
@@ -439,6 +440,8 @@ export default {
       email: null,
       password: null,
       leafShow: false,
+      loginStatus: false,
+      loginSuccess: null
     };
   },
   methods: {
@@ -500,7 +503,17 @@ export default {
     },
   },
   mounted() {
-    console.log("soy punetas si jala 2 veces");
+    console.log(this.loginSuccess);
+    this.loginSuccess = CookieJar.getTokenLogged()
+    console.log(this.loginSuccess)
+    if (this.loginSuccess != undefined &&  this.loginSuccess !=null && this.loginSuccess !='') {
+      this.loginStatus = true
+      console.log("cambio de login status a true")
+    }else{
+      console.log("No hubo cambio de login status a true")
+      //console.log
+    }
+
   },
   beforeDestroy() {},
 };
