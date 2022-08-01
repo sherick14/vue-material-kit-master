@@ -380,7 +380,8 @@ import { LoginCard } from "@/components";
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
 import axios from "axios";
-import CookieJar from "../cookieJar.js"
+import CookieJar from "../cookieJar.js";
+import MainNavbar from "../layout/MainNavbar.vue"
 
 Vue.use(BootstrapVue);
 
@@ -446,11 +447,8 @@ export default {
   },
   methods: {
     greet(event) {
-      var perro = "holiwi";
-      alert(`diste clic`);
       alert(this.login2.email);
-      console.log(this.login2);
-      console.log("ania");
+      //console.log(this.login2);
       axios
         .post("http://localhost:3000/login", this.login2)
         .then((res) => {
@@ -463,28 +461,6 @@ export default {
       // `event` is the native DOM event
     },
   },
-  // methods: {
-  //   leafActive() {
-  //     if (window.innerWidth < 768) {
-  //       this.leafShow = false;
-  //     } else {
-  //       this.leafShow = true;
-  //     }
-  //   },
-
-  //   login(event) {
-  //     console.log("diste clic")
-  //     //console.log(this.login2)
-  //     // axios.post("http://localhost:3000/login)", this.login2).then((res) => {
-  //     //   console.log("entraste")
-  //     //   console.log(res)
-  //     // }).catch((e) => {
-  //     //   console.log("error")
-  //     //   console.log(e)
-  //     // })
-  //   }
-
-  // },
   computed: {
     headerStyle() {
       return {
@@ -503,14 +479,15 @@ export default {
     },
   },
   mounted() {
-    console.log(this.loginSuccess);
+    //console.log(this.loginSuccess);
     this.loginSuccess = CookieJar.getTokenLogged()
-    console.log(this.loginSuccess)
+    //console.log(this.loginSuccess)
     if (this.loginSuccess != undefined &&  this.loginSuccess !=null && this.loginSuccess !='') {
       this.loginStatus = true
-      console.log("cambio de login status a true")
+      //console.log("cambio de login status a true")
+      MainNavbar.loginSwitch()
     }else{
-      console.log("No hubo cambio de login status a true")
+      //console.log("No hubo cambio de login status a true")
       //console.log
     }
 

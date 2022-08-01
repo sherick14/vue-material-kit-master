@@ -30,12 +30,14 @@
             <li><a href="#" class="footerText">Alta de proveedores</a></li>
             <br />
             <li><a href="#" class="footerText">Ayuda</a></li>
+            <br>
+            <li><a href="#/login" class="footerText">Cerrar sesión</a></li>
           </ul>
         </div>
         <!-- contact -->
         <div class="col-2">
           <ul class="list-unstyled mx-auto">
-            <li class="footerTitle">Información</li>
+            <li class="footerTitle">Contacto</li>
             <br />
             <li class="footerText">Paseos Vista del Sol 6801, Vista del Sol, 31206Chihuahua, Chih.</li>
             <br />

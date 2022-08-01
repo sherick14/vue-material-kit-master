@@ -6,9 +6,9 @@ const frase = "123456"
 
 export default {
     setUserLogged(user, nameUser, token) {
-        console.log(user)
-        console.log(nameUser)
-        console.log(token)
+        //console.log(user)
+        //console.log(nameUser)
+        //console.log(token)
         const inMinutes = new Date(new Date().getTime() + 60 * 60 * 1000); //60 minutos
 
         const idUserC = CryptoJS.AES.encrypt(user.toString(),frase).toString();

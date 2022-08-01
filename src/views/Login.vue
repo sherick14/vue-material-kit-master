@@ -57,6 +57,7 @@
 import { LoginCard } from "@/components";
 import axios from "axios";
 import CookieJar from "../cookieJar.js"
+import cookieJar from '../cookieJar.js';
 
 export default {
   components: {
@@ -75,10 +76,6 @@ export default {
   },
   methods: {
     login(event) {
-      alert(`diste clic`);
-      alert(this.loginData.email);
-      console.log(this.loginData);
-      console.log("ania");
       //this.$router.replace({ name:"login" })
       axios
         .post("http://localhost:3000/login", this.loginData)
@@ -106,6 +103,9 @@ export default {
         backgroundImage: `url(${this.header})`
       };
     }
+  },
+  mounted() {
+    cookieJar.removeOnLogin()
   }
 };
 </script>

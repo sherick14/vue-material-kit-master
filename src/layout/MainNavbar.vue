@@ -83,7 +83,7 @@
                     v-if="this.status == true"
                   />
                   <label for="" class="px-3" v-if="this.status == true"
-                    >Erick Silva</label
+                    >{{this.name}}</label
                   >
                 </md-list-item>
               </md-list>
@@ -113,7 +113,9 @@ function resizeThrottler(actualResizeHandler) {
 
 import MobileMenu from "@/layout/MobileMenu";
 import axios from "axios";
+import CookieJar from "../cookieJar.js";
 export default {
+  
   components: {
     MobileMenu,
   },
@@ -143,6 +145,8 @@ export default {
       extraNavClasses: "",
       toggledClass: false,
       status: false,
+      token: null,
+      name: null,
       login2: {
         email: "prueba@correo.com",
         password: "Alex123#@!",
@@ -156,38 +160,9 @@ export default {
     },
   },
   methods: {
+    
     greet(event) {
-      alert(`diste clic`);
-      alert(this.login2.email);
-      console.log(this.login2);
-      console.log("ania");
       this.$router.replace({ name:"login" })
-      // axios
-      //   .post("http://localhost:3000/login", this.login2)
-      //   .then((res) => {
-      //     console.log(res);
-      //   })
-      //   .catch((e) => {
-      //     console.log("error");
-      //     console.log(e);
-      //   });
-      
-    },
-    modal(event) {
-      alert(`diste clic`);
-      alert(this.login2.email);
-      console.log(this.login2);
-      console.log("ania");
-      axios
-        .post("http://localhost:3000/login", this.login2)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((e) => {
-          console.log("error");
-          console.log(e);
-        });
-      // `event` is the native DOM event
     },
     bodyClick() {
       let bodyClick = document.getElementById("bodyClick");
@@ -237,6 +212,19 @@ export default {
   mounted() {
     document.addEventListener("scroll", this.scrollListener);
     console.log("cargue despues del login jiji")
+  },
+  updated() {
+    //console.log("componente actualizado")
+    //console.log(this.status)
+    //console.log(this.token);
+    this.token = CookieJar.getTokenLogged()
+    //console.log(this.token)
+    if (this.token != undefined &&  this.token !=null && this.token !='') {
+      this.status = true
+      this.name = CookieJar.getNameUserLogged()      
+    }else{
+      this.status = false
+    }
   },
   beforeDestroy() {
     document.removeEventListener("scroll", this.scrollListener);
