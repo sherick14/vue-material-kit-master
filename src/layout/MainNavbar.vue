@@ -1,73 +1,98 @@
 <template>
-  <md-toolbar
-    id="toolbar"
-    md-elevation="0"
-    class="md-transparent md-absolute"
-    :class="extraNavClasses"
-    :color-on-scroll="colorOnScroll"
-  >
-    <div class="md-toolbar-row md-collapse-lateral">
-      <!-- logo -->
-      <div class="md-toolbar-section-start">
-        <img src="@/assets/img/Greenie_grande.png" height="42" width="53" />
-        <h3 class="md-title px-3">MR. GREENIE</h3>
-        <md-list-item
-          href="https://demos.creative-tim.com/vue-material-kit/documentation/"
-          target="_blank"
-          v-if="showDownload"
-        >
-          <p>Inicio</p>
-        </md-list-item>
+  <div>
+    <md-toolbar
+      id="toolbar"
+      md-elevation="0"
+      class="md-transparent md-absolute"
+      :class="extraNavClasses"
+      :color-on-scroll="colorOnScroll"
+    >
+      <div class="md-toolbar-row ">
+        <!-- logo -->
+        <div class="md-toolbar-section-start">
+          <img src="@/assets/img/Greenie_grande.png" height="42" width="53" />
+          <h3 class="md-title px-3">MR. GREENIE</h3>
+          <md-list-item
+            href="https://demos.creative-tim.com/vue-material-kit/documentation/"
+            target="_blank"
+            v-if="showDownload"
+          >
+            <p>Inicio</p>
+          </md-list-item>
 
-        <md-list-item
-          href="javascript:void(0)"
-          @click="scrollToElement()"
-          v-if="showDownload"
-        >
-          <p>Provedores</p>
-        </md-list-item>
-        <md-list-item
-          href="javascript:void(0)"
-          @click="scrollToElement()"
-          v-if="showDownload"
-        >
-          <p>Servicios</p>
-        </md-list-item>
-      </div>
+          <md-list-item
+            href="javascript:void(0)"
+            @click="scrollToElement()"
+            v-if="showDownload"
+          >
+            <p>Provedores</p>
+          </md-list-item>
+          <md-list-item
+            href="javascript:void(0)"
+            @click="scrollToElement()"
+            v-if="showDownload"
+          >
+            <p>Servicios</p>
+          </md-list-item>
+        </div>
 
-      <div class="md-toolbar-section-end">
-        <div class="md-collapse">
-          <div class="md-collapse-wrapper">
-            <mobile-menu nav-mobile-section-start="true">
-              <!-- Here you can add your items from the section-start of your toolbar -->
-            </mobile-menu>
-            <md-list>
-              <div clas></div>
+        <div class="md-toolbar-section-end">
+          <div class="md-collapse">
+            <div class="md-collapse-wrapper">
+              <mobile-menu nav-mobile-section-start="true">
+                <!-- Here you can add your items from the section-start of your toolbar -->
+              </mobile-menu>
+              <md-list>
+                <div clas></div>
 
-              <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="showDownload"
-              >
-              </md-list-item>
+                <md-list-item
+                  href="javascript:void(0)"
+                  @click="scrollToElement()"
+                  v-if="showDownload"
+                >
+                </md-list-item>
 
-              
-              <md-list-item
-          href="javascript:void(0)"
-          @click="scrollToElement()"
-          v-if="showDownload"
-        >
-          
-          <p> <strong>Ir a modo proveedor</strong> </p>
-        </md-list-item>
-              
-              <button class="btnLogin">Iniciar sesión</button>
-            </md-list>
+                <md-list-item
+                  href="javascript:void(0)"
+                  @click="scrollToElement()"
+                  v-if="showDownload"
+                >
+                  <p>
+                    <strong v-if="this.status == false"
+                      >Ir a modo proveedor</strong
+                    >
+                    <strong v-if="this.status == true">Modo proveedor</strong>
+                  </p>
+                </md-list-item>
+                <md-list-item>
+                  <button
+                    class="btnLogin"
+                    @click="greet"
+                    v-if="this.status == false"
+                  >
+                    Iniciar sesión
+                  </button>
+                  <img
+                    src="@/assets/img/Avatar.png"
+                    height="34"
+                    width="34"
+                    v-if="this.status == true"
+                  />
+                  <label for="" class="px-3" v-if="this.status == true"
+                    >Erick Silva</label
+                  >
+                </md-list-item>
+              </md-list>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </md-toolbar>
+      <br><br>
+      <div class="bg-white">xd</div>
+    </md-toolbar> 
+    <div class="bg-white">xd</div>
+  </div>
+  
 </template>
 
 <script>
@@ -85,6 +110,7 @@ function resizeThrottler(actualResizeHandler) {
 }
 
 import MobileMenu from "@/layout/MobileMenu";
+import axios from "axios";
 export default {
   components: {
     MobileMenu,
@@ -114,6 +140,11 @@ export default {
     return {
       extraNavClasses: "",
       toggledClass: false,
+      status: true,
+      login2: {
+        email: "prueba@correo.com",
+        password: "Alex123#@",
+      },
     };
   },
   computed: {
@@ -123,6 +154,38 @@ export default {
     },
   },
   methods: {
+    greet(event) {
+      alert(`diste clic`);
+      alert(this.login2.email);
+      console.log(this.login2);
+      console.log("ania");
+      axios
+        .post("http://localhost:3000/login", this.login2)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((e) => {
+          console.log("error");
+          console.log(e);
+        });
+      // `event` is the native DOM event
+    },
+    modal(event) {
+      alert(`diste clic`);
+      alert(this.login2.email);
+      console.log(this.login2);
+      console.log("ania");
+      axios
+        .post("http://localhost:3000/login", this.login2)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((e) => {
+          console.log("error");
+          console.log(e);
+        });
+      // `event` is the native DOM event
+    },
     bodyClick() {
       let bodyClick = document.getElementById("bodyClick");
 
