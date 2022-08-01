@@ -9,3 +9,13 @@
     </div>
   </div>
 </template>
+
+<script>
+import Vue from "vue";
+
+//import CookieJar from "@/logic/CookieJar";
+
+export default {
+  
+}
+</script>

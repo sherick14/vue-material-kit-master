@@ -93,7 +93,7 @@
       </div>
       <br /><br />
     </md-toolbar>
-    <div class="bg-white" slot="footer">xd</div>
+    <!-- <div class="bg-white" slot="footer">xd</div> -->
   </div>
 </template>
 

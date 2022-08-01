@@ -56,6 +56,7 @@
 <script>
 import { LoginCard } from "@/components";
 import axios from "axios";
+import CookieJar from "../cookieJar.js"
 
 export default {
   components: {
@@ -83,6 +84,7 @@ export default {
         .post("http://localhost:3000/login", this.loginData)
         .then((res) => {
           console.log(res);
+          CookieJar.setUserLogged(res.data.user, res.data.userName, res.data.token);
           this.$router.replace({ name:"index" })
         })
         .catch((e) => {

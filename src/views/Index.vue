@@ -2,8 +2,28 @@
   <div class="wrapper">
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="mt-5 space-110" />
+      <div class="bg-white row">
+        <div class="col-1"></div>
+        <div class="col-6 my-3">
+          <span class="px-2">
+            <img src="@/assets/img/Reservaciones.svg"  />
+            <label for="" class="px-4">Mis reservaciones</label>
+          </span>
+
+          <span class="px-4">
+            <img src="@/assets/img/Pagos.svg" />
+            <label for="" class="px-3">Pagos</label>
+          </span>
+          <span class="px-4">
+            <img src="@/assets/img/Favoritos.svg" class="" />
+            <label for="" class="px-4">Mis favoritos</label>
+          </span>
+        </div>
+        <div class="col-5"></div>
+      </div>
       <div class="mt-5 space-110" />
       <div class="space-50" />
+
       <div class="row" style="width: 100%">
         <div class="col-1" />
         <div class="col-11">
@@ -307,7 +327,7 @@
               <div class="space-30" />
               <h2 class="jumbotronTitle">Únete a la red de Mr. Greenie</h2>
               <div class="space-70" />
-              
+
               <div class="row">
                 <div class="col-6">
                   <p class="jumboText700">
@@ -343,17 +363,14 @@
           <h2 class="mainTitle">Cobertura Mr Greenie</h2>
           <br />
           <label for="" class="subtitleText">¡Estamos en todo México!</label>
-          
         </div>
         <!-- <small-navigation></small-navigation> -->
       </div>
       <small-navigation class="mt-5"></small-navigation>
       <navigation></navigation>
-      
     </div>
-    <button @click="greet">Greet</button>
+    
   </div>
-  
 </template>
 
 <script>
@@ -362,7 +379,7 @@ import TypographyImages from "./components/TypographyImagesSection";
 import { LoginCard } from "@/components";
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
-import axios from "axios"
+import axios from "axios";
 
 Vue.use(BootstrapVue);
 
@@ -425,20 +442,23 @@ export default {
     };
   },
   methods: {
-  greet(event) {
-    var perro = "holiwi"
-    alert(`diste clic`)
-    alert(this.login2.email)
-    console.log(this.login2)
-    console.log('ania')
-    axios.post("http://localhost:3000/login" , this.login2).then((res) => {
-      console.log(res);
-    }).catch((e)=> {
-      console.log('error')
-      console.log(e)
-    });
-    // `event` is the native DOM event
-  }
+    greet(event) {
+      var perro = "holiwi";
+      alert(`diste clic`);
+      alert(this.login2.email);
+      console.log(this.login2);
+      console.log("ania");
+      axios
+        .post("http://localhost:3000/login", this.login2)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((e) => {
+          console.log("error");
+          console.log(e);
+        });
+      // `event` is the native DOM event
+    },
   },
   // methods: {
   //   leafActive() {
@@ -447,8 +467,8 @@ export default {
   //     } else {
   //       this.leafShow = true;
   //     }
-  //   }, 
-    
+  //   },
+
   //   login(event) {
   //     console.log("diste clic")
   //     //console.log(this.login2)
@@ -460,7 +480,7 @@ export default {
   //     //   console.log(e)
   //     // })
   //   }
-    
+
   // },
   computed: {
     headerStyle() {
@@ -480,11 +500,9 @@ export default {
     },
   },
   mounted() {
-    
+    console.log("soy punetas si jala 2 veces");
   },
-  beforeDestroy() {
-    
-  },
+  beforeDestroy() {},
 };
 </script>
 <style lang="scss">
