@@ -6,8 +6,8 @@
           <div
             class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto"
           >
-            <login-card header-color="green">
-              <h4 slot="title" class="card-title">Login</h4>
+            <login-card header-color="orange">
+              <h4 slot="title" class="card-title">Iniciar sesión</h4>
               <md-button
                 slot="buttons"
                 href="javascript:void(0)"
@@ -29,25 +29,22 @@
               >
                 <i class="fab fa-google-plus-g"></i>
               </md-button>
-              <p slot="description" class="description">Or Be Classical</p>
+              <p slot="description" class="description">O sé clásico</p>
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>face</md-icon>
-                <label>First Name...</label>
-                <md-input v-model="firstname"></md-input>
+                <label>Usuario</label>
+                <md-input v-model="loginData.email"></md-input>
               </md-field>
-              <md-field class="md-form-group" slot="inputs">
-                <md-icon>email</md-icon>
-                <label>Email...</label>
-                <md-input v-model="email" type="email"></md-input>
-              </md-field>
+              
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>lock_outline</md-icon>
-                <label>Password...</label>
-                <md-input v-model="password"></md-input>
+                <label>Contraseña</label>
+                <md-input v-model="loginData.password" type="password" ></md-input>
               </md-field>
-              <md-button slot="footer" class="md-simple md-success md-lg">
-                Get Started
-              </md-button>
+              
+              <button slot="footer" class="mainButton" @click="login">Iniciar sesión
+
+              </button>
             </login-card>
           </div>
         </div>
@@ -58,6 +55,7 @@
 
 <script>
 import { LoginCard } from "@/components";
+import axios from "axios";
 
 export default {
   components: {
@@ -66,10 +64,33 @@ export default {
   bodyClass: "login-page",
   data() {
     return {
-      firstname: null,
-      email: null,
-      password: null
+
+      loginData: {
+        email: "prueba@correo.com",
+        password: "Alex123#@!",
+      },
+      
     };
+  },
+  methods: {
+    login(event) {
+      alert(`diste clic`);
+      alert(this.loginData.email);
+      console.log(this.loginData);
+      console.log("ania");
+      //this.$router.replace({ name:"login" })
+      axios
+        .post("http://localhost:3000/login", this.loginData)
+        .then((res) => {
+          console.log(res);
+          this.$router.replace({ name:"index" })
+        })
+        .catch((e) => {
+          console.log("error");
+          console.log(e);
+        });
+      
+    },
   },
   props: {
     header: {

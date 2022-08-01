@@ -7,7 +7,7 @@
       :class="extraNavClasses"
       :color-on-scroll="colorOnScroll"
     >
-      <div class="md-toolbar-row ">
+      <div class="md-toolbar-row">
         <!-- logo -->
         <div class="md-toolbar-section-start">
           <img src="@/assets/img/Greenie_grande.png" height="42" width="53" />
@@ -72,6 +72,10 @@
                   >
                     Iniciar sesión
                   </button>
+                  <!-- <input type="submit" name="" id="" href="#/login">
+                  <md-button href="#/login" class="btnLogin"
+                    >View Login Page</md-button
+                  > -->
                   <img
                     src="@/assets/img/Avatar.png"
                     height="34"
@@ -87,12 +91,10 @@
           </div>
         </div>
       </div>
-      <br><br>
-      <div class="bg-white">xd</div>
-    </md-toolbar> 
-    <div class="bg-white">xd</div>
+      <br /><br />
+    </md-toolbar>
+    <div class="bg-white" slot="footer">xd</div>
   </div>
-  
 </template>
 
 <script>
@@ -140,10 +142,10 @@ export default {
     return {
       extraNavClasses: "",
       toggledClass: false,
-      status: true,
+      status: false,
       login2: {
         email: "prueba@correo.com",
-        password: "Alex123#@",
+        password: "Alex123#@!",
       },
     };
   },
@@ -159,16 +161,17 @@ export default {
       alert(this.login2.email);
       console.log(this.login2);
       console.log("ania");
-      axios
-        .post("http://localhost:3000/login", this.login2)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((e) => {
-          console.log("error");
-          console.log(e);
-        });
-      // `event` is the native DOM event
+      this.$router.replace({ name:"login" })
+      // axios
+      //   .post("http://localhost:3000/login", this.login2)
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((e) => {
+      //     console.log("error");
+      //     console.log(e);
+      //   });
+      
     },
     modal(event) {
       alert(`diste clic`);
@@ -233,6 +236,7 @@ export default {
   },
   mounted() {
     document.addEventListener("scroll", this.scrollListener);
+    console.log("cargue despues del login jiji")
   },
   beforeDestroy() {
     document.removeEventListener("scroll", this.scrollListener);
